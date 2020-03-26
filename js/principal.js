@@ -13,7 +13,7 @@ for(var i = 0; i < pacientes.length; i++){ //inicializa o loop
     var tdImc = paciente.querySelector(".info-imc");        //busca a informacao de imc do paciente dentro da variavel paciente acima
 
     var peso = tdPeso.textContent;                          // converte o tdPeso para texto e coloca na variavel peso
-    var altura = tdAltura.textContent;                      // converte o tdAl;tura para texto e coloca na variavel altura
+    var altura = tdAltura.textContent;                      // converte o tdAltura para texto e coloca na variavel altura
 
     var pesoValido = true;                                  //inicializa variavel como falsa para validacao de peso
     var alturaValido = true;                                //inicializa variavel como falsa para validacao de altura
@@ -21,11 +21,14 @@ for(var i = 0; i < pacientes.length; i++){ //inicializa o loop
     if(peso <= 0 || peso >= 1000){                          //validacao
         pesoValido = false                                  // caso o if seja true muda a variavel para false
         tdImc.textContent = "Peso invalido"                 //adiciona texto de validacao no tdImc
+        paciente.classList.add("paciente-invalido");        //adiciona classe no paciente com peso invalido para alterara o css da pagina      
+
     }
 
     if(altura <= 0 || altura >= 3.00){
         alturaValido = false
         tdImc.textContent = "Altura invalida"
+        paciente.classList.add("paciente-invalido");     
     }
 
     if(pesoValido && alturaValido){                         //caso as variaveis de validacao nao mudem para falso
