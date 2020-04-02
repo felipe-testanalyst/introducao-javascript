@@ -33,7 +33,7 @@ function montaTr(paciente){
     pacienteTr.classList.add("paciente");               //Adiciona classe
 
     //anexa as TD a TR
-    pacienteTr.appendChild(montaTd(paciente.nome, "info-nome"));
+    pacienteTr.appendChild(montaTd(paciente.nome, "info-nome")); //chama a monta td e passa o dado do paciente e a classe
     pacienteTr.appendChild(montaTd(paciente.peso, "info-peso"));
     pacienteTr.appendChild(montaTd(paciente.altura, "info-altura"));
     pacienteTr.appendChild(montaTd(paciente.gordura, "info-gordura"));
