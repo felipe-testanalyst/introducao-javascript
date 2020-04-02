@@ -49,3 +49,38 @@ function montaTd(dado, classe){
 
     return td;
 }
+
+function validaPacientes(paciente){
+    var erros = [];
+
+    if(paciente.nome.length == 0){
+        erros.push("O nome nao pode ser em branco");
+    }
+
+    if (isNaN(paciente.nome)){
+        erros.push("Nome nao pode conter numeros");
+    }
+
+    if(paciente.peso.length == 0){
+        erros.push("O peso nao pode ser em branco");
+    }
+
+    if(paciente.altura.length == 0){
+        erros.push("A Altura nao pode ser em branco");
+    }
+
+    if(paciente.gordura.length == 0){
+        erros.push("A gordura nao pode ser em branco");
+    }
+
+    if(!validaPeso(paciente.peso)){
+        erros.push("Peso invalido");
+    }
+
+    if(!validaAltura(paciente.altura)){
+        erros.push("Altura Invalida");
+    }
+
+    return erros;
+
+}
