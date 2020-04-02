@@ -16,17 +16,17 @@ for(var i = 0; i < pacientes.length; i++){ //inicializa o loop
     var altura = tdAltura.textContent;                      // converte o tdAltura para texto e coloca na variavel altura
 
     //inicializa variavel como falsa para validacao
-    var pesoValido = true;                                  
-    var alturaValido = true;                                
+    var pesoValido = validaPeso(peso);                                  
+    var alturaValido = validaAltura(altura);                                
 
-    if(peso <= 0 || peso >= 1000){                          //validacao
+    if(!pesoValido){                          //validacao
         pesoValido = false                                  // caso o if seja true muda a variavel para false
         tdImc.textContent = "Peso invalido"                 //adiciona texto de validacao no tdImc
         paciente.classList.add("paciente-invalido");        //adiciona classe no paciente com peso invalido para alterara o css da pagina      
 
     }
 
-    if(altura <= 0 || altura >= 3.00){
+    if(!alturaValido){
         alturaValido = false
         tdImc.textContent = "Altura invalida"
         paciente.classList.add("paciente-invalido");     
@@ -59,3 +59,4 @@ function validaAltura(altura){
         return false;
     }
 }
+
