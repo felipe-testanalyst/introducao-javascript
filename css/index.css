@@ -51,6 +51,16 @@ section h2{
 	margin-bottom: .5em;
 }
 
+#filtro-tabela{
+	width: 200px;
+	height: 30px;
+	margin-bottom: 10px;
+}
+
+.invisivel{
+	display: none;
+}
+
 table{
 	width: 100%;
 	margin-bottom : .5em;
