@@ -16,8 +16,8 @@ botaoAdiciona.addEventListener("click", function(event){  //adiciona evento ao b
         return;
     }
 
-    var tabela = document.querySelector("#tabela-pacientes"); //traz a tabela pacientes
-    tabela.appendChild(pacienteTr);   //anexa a nova TD a tabela
+    adicionaPacientesNaTabela(paciente);
+
     form.reset();
 
     var mensagensErro = document.querySelector("#mensagens-erro");
@@ -58,6 +58,12 @@ function montaTd(dado, classe){
     td.textContent = dado;
 
     return td;
+}
+
+function adicionaPacientesNaTabela(paciente){
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
 }
 
 function validaPacientes(paciente){
